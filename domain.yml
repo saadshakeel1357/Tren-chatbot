@@ -1,0 +1,80 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- deny
+- general_movie_search
+- goodbye
+- greet
+- provide_genre
+- thanks
+
+entities:
+- genres
+slots:
+  genres:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: genres
+      intent: provide_genre
+
+responses:
+  utter_greet:
+  - text: Hi there! My name is Tren. 
+    I am a chatbot that recommends movies. 
+    You can select up to 3 genres, and I will
+    give you the best movie according to 
+    those genres. You can type "/restart" to
+    restart the conversation at anytime.
+  - text: Hello! My name is Tren. 
+    I am a chatbot that recommends movies. 
+    You can select up to 3 genres, and I will
+    give you the best movie according to 
+    those genres. You can type "/restart" to
+    restart the conversation at anytime.
+  - text: Hey there! My name is Tren. 
+    I am a chatbot that recommends movies. 
+    You can select up to 3 genres, and I will
+    give you the best movie according to 
+    those genres. You can type "/restart" to
+    restart the conversation at anytime.
+  - text: Hey! My name is Tren. 
+    I am a chatbot that recommends movies. 
+    You can select up to 3 genres, and I will
+    give you the best movie according to 
+    those genres. You can type "/restart" to
+    restart the conversation at anytime.
+  utter_ask_genre:
+  - text: Ok. I can help you with that. 
+    What type of movies do you prefer? 
+    You can add up to 3 genres
+  utter_no_genre:
+  - text: Not a valid genre.
+  utter_confirm_movie:
+  - text: Does this movie catch your interest?
+  utter_goodbye:
+  - text: Goodbye then! Feel free to come back and chat anytime.
+  utter_restart:
+  - text: Alright! Let's start over. 
+    What type of movie do you prefer? 
+    You can add up to 3 genres
+  utter_iamabot:
+  - text: I am a bot, created by Saad Shakeel, and powered by Rasa.
+  utter_thanks:
+  - text: I'm glad to hear that :)
+
+actions:
+- utter_greet
+- action_display_genres
+- utter_goodbye
+- action_search_movie
+- utter_confirm_movie
+- utter_ask_genre
+- utter_restart
+- action_default_fallback
+- action_restart
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

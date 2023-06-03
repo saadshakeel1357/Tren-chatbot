@@ -1,0 +1,121 @@
+version: "3.1"
+stories:
+- story: general happiest path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: general_movie_search
+  - action: utter_ask_genre
+  - intent: provide_genre
+    entities:
+    - genres:
+      - action
+      - comedy
+    - slot:
+        genres:
+          - type: list
+            value:
+            - action
+            - adventure
+  - slot_was_set:
+    - genres:
+      - type: list
+        value:
+        - action
+        - adventure
+  - action: action_display_genres   
+  - action: action_search_movie
+  - action: utter_goodbye
+  - action: action_restart
+
+
+
+- story: movie reject path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: general_movie_search
+  - action: utter_ask_genre
+  - intent: provide_genre
+    entities:
+    - genres:
+      - action
+      - comedy
+    - slot:
+        genres:
+          - type: list
+            value:
+            - action
+            - adventure
+  - slot_was_set:
+    - genres:
+      - type: list
+        value:
+        - action
+        - adventure
+  - action: action_display_genres   
+  - action: action_search_movie
+  - action: utter_goodbye
+  - action: action_restart
+
+
+
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: general_movie_search
+  - action: utter_ask_genre
+  - intent: provide_genre
+    entities:
+    - genres: Drama
+    - genres: Action
+  - slot_was_set:
+    - genres:
+      - Drama
+      - Action
+  - action: action_display_genres
+  - action: action_search_movie
+  - action: utter_goodbye
+  - action: action_restart
+
+
+
+
+
+- story: no greet story
+  steps:
+  - intent: provide_genre
+    entities:
+    - genres: Drama
+    - genres: Thriller
+  - slot_was_set:
+    - genres:
+      - Drama
+      - Thriller
+  - action: action_display_genres
+  - action: action_search_movie
+  - action: utter_goodbye
+  - action: action_restart
+
+
+
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_genre
+    entities:
+    - genres: action
+    - genres: comedy
+  - action: action_extract_slots
+  - slot_was_set:
+    - genres:
+      - action
+      - comedy
+  - action: action_search_movie
+  - action: utter_goodbye
+  - action: action_restart

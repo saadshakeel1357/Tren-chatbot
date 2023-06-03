@@ -1,0 +1,60 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+
+pipeline:
+- name: SpacyNLP
+  model: en_core_web_md
+- name: SpacyTokenizer
+- name: SpacyFeaturizer
+- name: RegexFeaturizer
+- name: DIETClassifier
+  epochs: 100
+  constrain_similarities: true
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: "char_wb"
+  min_ngram: 1
+  max_ngram: 4
+- name: EntitySynonymMapper
+- name: ResponseSelector
+  epochs: 100
+  constrain_similarities: true
+- name: SklearnIntentClassifier
+- name: FallbackClassifier
+  threshold: 0.1
+
+
+
+
+
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+- name: MemoizationPolicy
+- name: TEDPolicy
+  max_history: 3
+  epochs: 100
+  constrain_similarities: true
+  # - name: TwoStageFallbackPolicy
+  #   nlu_threshold: 0.4
+  #   ambiguity_threshold: 0.1
+  #   fallback_core_action_name: "action_default_fallback"
+  #   core_threshold: 0.3
+  #   fallback_nlu_action_name: "action_default_ask_again"
+  # - name: MappingPolicy
+- name: RulePolicy
+  core_fallback_threshold: 0.4
+  core_fallback_action_name: "action_default_fallback"
+  enable_fallback_prediction: true
+
+
+assistant_id: 20230428-232545-customer-cart

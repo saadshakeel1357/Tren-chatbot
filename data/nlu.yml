@@ -1,0 +1,198 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - yo
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: general_movie_search
+  examples: |
+    - I want to watch a movie
+    - I want to watch a movie today
+    - I want to watch a movie tonight
+    - I need to watch a movie
+    - I need to watch a movie today
+    - I need to watch a movie tonight
+    - Which movie should I watch?
+    - Which movie should I watch today?
+    - Which movie should I watch tonight?
+    - Can you tell me which movie should I watch?
+    - Can you tell me which movie should I watch today?
+    - Can you tell me which movie should I watch tonight?
+    - Suggest a good movie
+    - Suggest a good movie for tonight
+    - Suggest a good movie for today
+    - Suggest a good movie to watch
+    - Suggest a good movie to watch tonight
+    - Suggest a good movie to watch today
+    - Find me a movie worth watching
+    - What could be a good movie to watch?
+    - What could be a good movie to watch today?
+    - What could be a good movie to watch tonight?
+    - Can you recommend me a movie to watch?
+    - Can you recommend me a movie to watch today?
+    - Can you recommend me a movie to watch tonight?
+    - Can you suggest me a movie to watch?
+    - Can you suggest me a movie to watch today?
+    - Can you suggest me a movie to watch tonight?
+    - Choose a movie for me to watch
+    - Choose a movie for me to watch today
+    - Choose a movie for me to watch tonight
+    - Can you choose a movie for me to watch?
+    - Can you choose a movie for me to watch today?
+    - Can you choose a movie for me to watch tonight?
+    - I would like to watch a movie today
+    - I would like to watch a movie tonight
+    - I would like to watch a movie
+    - I am in the mood to watch a movie
+    - I am in the mood to watch a movie today
+    - I am in the mood to watch a movie tonight
+    - suggest me a movie
+- intent: provide_genre
+  examples: |
+    - [action](genres)
+    - [drama](genres)
+    - [comedy](genres)
+    - [thriller](genres)
+    - [horror](genres)
+    - [romance](genres)
+    - [adventure](genres)
+    - [animation](genres)
+    - [children](genres)
+    - [fantasy](genres)
+    - [crime](genres)
+    - [mystery](genres)
+    - [Sci-fi](genres)
+    - [scifi](genres)
+    - [western](genres)
+    - [sci fi](genres)
+    - [documentary](genres)
+    - [war](genres)
+    - [musical](genres)
+    - [action](genres) and [drama](genres)
+    - [comedy](genres) and [thriller](genres)
+    - [horror](genres) and [romance](genres)
+    - [adventure](genres) and [animation](genres)
+    - [children](genres) and [fantasy](genres)
+    - [crime](genres) and [mystery](genres)
+    - [Sci-fi](genres) and [scifi](genres)
+    - [western](genres) and [sci fi](genres)
+    - [documentary](genres) and [war](genres)
+    - [musical](genres) and [thriller](genres)
+    - I like [action](genres) and [drama](genres) movies.
+    - I like movies with [crime](genres) and [mystery](genres)
+    - I like [action](genres), [adventure](genres) and [drama](genres) movies.
+    - I like movies with [crime](genres), [thriller](genres) and [mystery](genres)
+    - I like [children](genres) movies with [fantasy](genres)
+    - I like [children](genres) movies with [fantasy](genres) and [adventure](genres)
+    - I like [children](genres) movies with [fantasy](genres), [animation](genres) and [adventure](genres)
+    - [action](genres), [thriller](genres), [comedy](genres)
+    - [Drama](genres) and [Action](genres)
+    - [Drama](genres) and [Thriller](genres)
+    - Suggest a good [Action](genres) and [Thriller](genres) movie
+    - Suggest a good [action](genres) and [comedy](genres) movie
+- intent: another_movie
+  examples: |
+    - I want to watch another movie.
+    - Suggest me another movie.
+    - I don't like this movie, try again.
+    - This is a bad movie.
+    - This is not a good movie
+    - I feel like watching another movie.
+    - Can you recommend another movie for me to watch?
+    - This movie isn't really doing it for me, do you have any other suggestions?
+    - I don't think this movie is very good.
+    - What other movies do you think I might enjoy?
+    - This movie isn't great, it's not very entertaining.
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - sounds good
+    - correct
+    - sure
+    - ok
+    - okay
+    - alright
+    - all right
+    - if you say so
+    - I don't mind
+    - I dont mind
+    - yea
+    - yeah
+    - ye
+    - a lot
+    - very much
+    - yes I like it
+    - yes I like them
+    - of course
+    - sure
+    - Yes, that's a great choice
+    - yes those are great choices
+    - yes, these are good movies
+    
+
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - perfect
+    - I like it
+    - this is good
+    - love it
+    - its really nice
+    - it is really nice
+    - nice recommendation
+    - good suggestion
+    - appreciate it
+    - I really appreciate it
+    - I like this movie
+    - this is a good movie
+    - this is a nice movie
+    - yes this is perfect
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - nah
+    - i hate it
+    - i hate this movie
+    - i dont want to watch this movie
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
