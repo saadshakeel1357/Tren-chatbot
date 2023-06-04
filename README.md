@@ -4,7 +4,7 @@ The Tren-Chatbot is a Rasa-based movie recommender chatbot created as part of a 
 
 ## Project Overview
 
-This project focuses on evaluating the effect of recommendation length on user experience within a movie recommender system. It consists of two chatbots, with the other one available [here]<[link](https://github.com/saadshakeel1357/Tren2-chatbot)>.
+This project focuses on evaluating the effect of recommendation length on user experience within a movie recommender system. It consists of two chatbots, with the other one available [here]<(https://github.com/saadshakeel1357/Tren2-chatbot)>.
 
 ## Features
 
