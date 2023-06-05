@@ -55,12 +55,8 @@ class SearchMovie(Action):
             mask = df['genres'].str.contains(genres[0].title()) & df['genres'].str.contains(genres[1].title()) 
         elif len(genres) == 3:
             mask = df['genres'].str.contains(genres[0].title()) & df['genres'].str.contains(genres[1].title()) & df['genres'].str.contains(genres[2].title())
-        elif len(genres) == 4:
-            mask = df['genres'].str.contains(genres[0].title()) & df['genres'].str.contains(genres[1].title()) & df['genres'].str.contains(genres[2].title()) & df['genres'].str.contains(genres[3].title())
-        elif len(genres) == 5:
-            mask = df['genres'].str.contains(genres[0].title()) & df['genres'].str.contains(genres[1].title()) & df['genres'].str.contains(genres[2].title()) & df['genres'].str.contains(genres[3].title()) & df['genres'].str.contains(genres[4].title())
-        elif len(genres) > 5:
-            dispatcher.utter_message("More than 5 genres selected!")
+        elif len(genres) > 3:
+            dispatcher.utter_message("More than 3 genres selected!")
         else:
             dispatcher.utter_message("NO genre specified")
 
